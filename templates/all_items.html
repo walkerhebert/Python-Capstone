@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}All Items{% endblock %}
+
+{% block body %}
+<h1>All Items</h1>
+
+<ul class="row">
+
+{% for item in items %}
+    <li>
+        <a href="/items/ {{ item.item_id }}">
+            {{ item.item_name }}
+        </a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock body %}
