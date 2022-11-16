@@ -1,13 +1,9 @@
-{% extends 'base.html' %}
-{% block title %}Waka Outfitters Home{% endblock %}
+{% extends 'base.html' %}{% block title %}Homepage{% endblock %}
 
 {% block body %}
-<h1>Waka Outfitters</h1>
 
-<div class="nav">
-  <ul>
-    <li class="nav1"><a href="/items">Items</a></li>
-  </ul>
+<div class="border">
+
 </div>
 
 <div class="allfields">
@@ -15,16 +11,16 @@
   <h2>Create an Account</h2>
 
   <form class="form1" action="/users" method="POST">
-    <p>
-      Email <input type="text" name="email">
+    <p class="email">
+      Email <input type="text" name="email" placeholder="Email address">
+    </p>
+
+    <p class="password">
+      Password <input type="password" name="password" placeholder="Password">
     </p>
 
     <p>
-      Password <input type="password" name="password">
-    </p>
-
-    <p>
-      <input type="submit">
+      <input type="submit" placeholder="Create" class="sub" id="sub1">
     </p>
   </form>
   </div>
@@ -34,18 +30,18 @@
   <h2>Log In</h2>
 
   <form class="form2" action="/login" method="POST">
-    <p>
-      Email <input type="text" name="email">
+    <p class="email">
+      Email <input type="text" name="email" placeholder="Email address">
+    </p>
+
+    <p class="password">
+      Password <input type="password" name="password" placeholder="Password">
     </p>
 
     <p>
-      Password <input type="password" name="password">
-    </p>
-
-    <p>
-      <input type="submit">
+      <input type="submit" placeholder="Login" class="sub" id="sub2">
     </p>
   </form>
-  </div>
+</div>
 </div>
 {% endblock %}

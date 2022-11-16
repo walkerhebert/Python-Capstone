@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, flash, session, redirect
 from model import connect_to_db, db
 import crud
 
+
 from jinja2 import StrictUndefined
 
 app = Flask(__name__)
@@ -14,6 +15,12 @@ def homepage():
     """View homepage."""
 
     return render_template("homepage.html")
+
+@app.route("/landing")
+def landing():
+    """View landing."""
+
+    return render_template("landing.html")
 
 
 @app.route("/items")
@@ -31,7 +38,8 @@ def show_item(item_id):
 
     item = crud.get_item_by_id(item_id)
 
-    return render_template("item_details.html", item=item)
+    return render_template("item_details.html", item=item )
+
 
 
 @app.route("/users", methods=["POST"])
@@ -53,6 +61,9 @@ def register_user():
     return redirect("/")
 
 
+    
+
+
 @app.route("/users/<user_id>")
 def show_user(user_id):
     """Show details on a particular user."""
@@ -61,8 +72,47 @@ def show_user(user_id):
 
     return render_template("user_details.html", user=user)
 
+        
+        
+@app.route("/cart")
+def show_cart():
+    """Show items in cart."""
 
-@app.route("/login", methods=["POST"])
+    # order_total = 0
+    # cart_items = []
+
+    # cart = session.get("CartItem", cart_items=cart_items, order_total=order_total)
+    
+    # for item in cart:
+    #     order_total += item.price
+    
+    # return render_template("cart.html", cart=cart)
+
+    return render_template("cart.html")
+
+# @app.route("/add_to_cart", methods=["POST"])
+# def add_to_cart(cart_id):
+#     """Add item to cart."""
+
+#     # item_id = request.form.get("item_id")
+#     # item = crud.get_item_by_id(item_id)
+#     # session["cart"] = item
+#     # cart_item = crud.get_cart_item_by_id(cart_id)
+
+
+#     return render_template("/item_details.html", cart_item=cart_item)
+
+
+
+@app.route("/empty_cart")
+def empty_cart():
+    """Empty cart."""
+
+    # session["cart"] = {}
+    return redirect("/cart")
+
+
+@app.route("/login", methods=["GET","POST"])
 def process_login():
     """Process user login."""
 
@@ -73,11 +123,19 @@ def process_login():
     if not user or user.password != password:
         flash("The email or password you entered was not valid.")
     else:
-        # Log in user by storing the user's email in session
         session["user_email"] = user.email
         flash(f"You're logged in as {user.email}!")
 
     return redirect("/")
+
+# @app.route("/logout")
+# def process_logout():
+#     """Process user logout."""
+
+#     del session["user_email"]
+#     flash("You're logged out!")
+
+#     return redirect("/")
 
 
 @app.route("/update_quantity", methods=["POST"])
@@ -109,7 +167,7 @@ def create_quantity(item_id):
         db.session.add(quantity)
         db.session.commit()
 
-        flash(f"You selected {quantity_amount} of this item.")
+        flash(f" {quantity_amount} of this item has been added to your cart.")
 
     return redirect(f"/items/{item_id}")
 

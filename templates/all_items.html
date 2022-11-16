@@ -1,17 +1,25 @@
-{% extends 'base.html' %}
-{% block title %}All Items{% endblock %}
+{% extends 'base.html' %} {% block title %}All Items{% endblock %} 
+
 
 {% block body %}
-<h1>All Items</h1>
-
-<ul class="row">
-
-{% for item in items %}
-    <li>
+<div>
+    <ul class="row">
+      {% for item in items %}
+      <li>
         <a href="/items/ {{ item.item_id }}">
-            {{ item.item_name }}
+            <img class="images" src="{{ item.image_path }}">
+            <div class="contents">
+            {{ item.item_name }} {{ item.price }}
+          </div>
         </a>
-    </li>
-{% endfor %}
-</ul>
-{% endblock body %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endblock %}
+
+
+
+
+
+

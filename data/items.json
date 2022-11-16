@@ -1,11 +1,65 @@
 [
     {
         "item_name": "BDG Dad Fit Denim",
-        "image_path": "https://image.tmdb.org/t/p/original//xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg",
+        "image_path": "https://img.shopstyle-cdn.com/sim/70/08/70084977a5080885419e502d881e11e4_best/bdg-bow-fit-cropped-jean.jpg",
         "description": "Light wash denim with a slight fade and a lower taper",
         "price": "$79.99"
     },
-    {
 
+    {
+        "item_name": "Champion Sweatshirt",
+        "image_path": "https://scene7.zumiez.com/is/image/zumiez/image/Champion-Reverse-Weave-Grey-Crew-Neck-Sweatshirt-_343425.jpg",
+        "description": "Reversible white & black Champion sweatshirt",
+        "price": "$45.99"
+    },
+
+    {
+        "item_name": "Sand Kith Hoodie",
+        "image_path": "https://images.stockx.com/images/Kith-Classic-Logo-Hoodie-Sand.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1623271496",
+        "description": "White Kith hoodie, no needed explanation",
+        "price": "$154.99"
+    },
+    
+    {
+        "item_name": "BDG Dark Flannel",
+        "image_path": "https://i.pinimg.com/474x/49/9a/1c/499a1cb268e0911513394028fa2bbafc.jpg",
+        "description": "Red soft knit flannel made with real wool",
+        "price": "$45.99"
+    },
+
+    {
+        "item_name": "CDG Converse",
+        "image_path": "https://media.endclothing.com/media/catalog/product/1/0/10-01-2022_RC_P1-K112-2_1_1.jpg",
+        "description": "White CDG Converse Chuck Taylor",
+        "price": "$119.99"
+    },
+
+    {
+        "item_name": "Vintage Outkast tee",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/62829536_001_d?$xlarge$&fit=constrain&qlt=80&wid=640",
+        "description": "Vintage '94 oversized Outkast tee",
+        "price": "$54.99"
+    },
+
+    {
+        "item_name": "Vintage Windbeaker",
+        "image_path": "https://ae01.alicdn.com/kf/Sd362ef35f16f43ecb8a93e00bb79631bF/Hip-Hop-Mens-Hooded-Windbreaker-Jacket-Autumn-2022-Casual-Vintage-Color-Block-Loose-Track-Hoodie-Jacket.jpg",
+        "description": "Used vintage '91 windbreaker",
+        "price": "$109.99"
+    },
+
+    {
+        "item_name": "Kith Box Logo Tee",
+        "image_path": "https://ae01.alicdn.com/kf/H3d8cbf209468437f97b18f1bff6026f8L.jpg?width=800&height=1066&hash=1866",
+        "description": "Box Logo Kith Tee with a slight oversized fit",
+        "price": "$84.99"
+    },
+
+    {
+        "item_name": "BDG Black Dad Fit Jeans",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/68506054_004_b?$xlarge$&fit=constrain&qlt=80&wid=640",
+        "description": "Black loose denim with a slight fade and a lower taper",
+        "price": "$79.99"
     }
+    
 ]

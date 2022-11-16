@@ -1,13 +1,14 @@
 import os
 import json
 from random import choice, randint
+import string
 
 import crud
 import model
 import server
 
-os.system("dropdb item")
-os.system('createdb item')
+os.system("dropdb waka")
+os.system('createdb waka')
 
 model.connect_to_db(server.app)
 model.db.create_all()
@@ -30,6 +31,9 @@ for item in item_data:
 model.db.session.add_all(items_in_db)
 model.db.session.commit()
 
+ ##--##  ##--##  ##--##  ##--##
+
+
 user_count = 10
 
 for n in range(user_count):
@@ -40,9 +44,12 @@ for n in range(user_count):
     model.db.session.add(user)
     
     
-    for _ in range(10):
+##--##  ##--##  ##--##  ##--##
+    
+    
+    for k in range(10):
         random_item = choice(items_in_db)
-        amount = randint(1, 5)
+        amount = randint(1, 11)
 
         quantity = crud.create_quantity(user, random_item, amount)
         model.db.session.add(quantity)

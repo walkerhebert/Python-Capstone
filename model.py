@@ -30,10 +30,26 @@ class Item(db.Model):
     item_name = db.Column(db.String)
     description = db.Column(db.Text)
     price = db.Column(db.String)
+    image_path = db.Column(db.String)
     
     def __repr__(self):
         return f"<Item item_id={self.item_id} item_name={self.item_name}>"
     
+    
+    
+    
+class CartItem(db.Model):
+    __tablename__ = "carts"
+    
+    cart_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    quantity = db.Column(db.Integer)
+    item_id = db.Column(db.Integer,db.ForeignKey("items.item_id"))
+    user_id = db.Column(db.Integer,db.ForeignKey("users.user_id"))
+    quantity_id = db.Column(db.Integer, db.ForeignKey("quantities.quantity_id"))
+    
+    user = db.relationship("User", backref="carts")
+    item = db.relationship("Item", backref="carts")
+    quantity = db.relationship("Quantity", backref="carts")
     
     
 class Quantity(db.Model):
@@ -44,29 +60,31 @@ class Quantity(db.Model):
     item_id = db.Column(db.Integer,db.ForeignKey("items.item_id"))
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
     
+    
     item = db.relationship("Item", backref="quantity")
     user = db.relationship("User", backref="quantity")
+ 
     
     def __repr__(self):
         return f"<Quantity quantity_id={self.quantity_id} amount={self.amount}>"
     
     
-# class Coupon(db.Model):
-#     __tablename__ = "coupons"
-    
-#     coupon_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-#     coupon_name = db.Column(db.Integer)
-#     item = db.Column(db.Integer,db.ForeignKey("items.item_id"))
-#     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
-#     quantity_id = db.Column(db.Integer, db.ForeignKey("quantities.quantity_id"))
     
     
-#     item = db.relationship("Item", backref="coupons")
-#     user = db.relationship("User", backref="coupons")
-#     quantity = db.relationship("Quantity", backref="coupons")
+class Coupon(db.Model):
+    __tablename__ = "coupons"
+    
+    coupon_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    coupon_code = db.Column(db.String)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
+    
+    
+    user = db.relationship("User", backref="coupons")
+    
+    
     
     def __repr__(self):
-        return f"<Coupon coupon_id={self.coupon_id} coupon_name={self.coupon_name}>"
+        return f"<Coupon coupon_id={self.coupon_id} coupon_name={self.coupon_code}>"
     
     
     

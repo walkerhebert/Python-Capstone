@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          
 
     <title>
       {% block title %}{% endblock %}
     </title>
 
-    {% block head %}{% endblock %}
+    {% block head %}
+    <div class="logo"><a href="/landing">
+      <img src="../static/images/wo-logo.png" alt="logo" width="350px"></a>
+      </div>
+    <div class="nav">
+      <ul>
+        <li class="nav3"><a href="/landing">Home</a></li>
+        <li class="nav1"><a href="/items">Collection</a></li>
+        <li class="nav4"><a href="/login">Login</a></li>
+        <li class="nav2"><a href="/cart"><i style="font-size:24px" class="fa">&#xf07a;</i></a></li>
+        <!-- <li class="nav2"><a href="/cart">Cart</a></li> -->
+      </ul>
+    </div>{% endblock %}
   </head>
   <body>
+    <i class="devicon-adonisjs-original"></i>
     {% for msg in get_flashed_messages() %}
     <p class="flash-msg">
       {{ msg }}
