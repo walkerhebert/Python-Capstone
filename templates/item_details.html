@@ -20,7 +20,7 @@
 {% if session.get('user_email') %}
 
 <div class="quantity">
-<form action="/items/{{ item.item_id }}/quantities" method="POST">
+<form action="/items/{{ item.item_id }}/carts" method="POST">
   <div class="quant-form">
   <p>
     Quantity:
@@ -32,7 +32,7 @@
     </select>
   </p>
 </div>
-  <p><input class="submit" type="Submit" value="Submit"  /></p>
+  <p><input class="submit" type="Submit" value="Add to Cart"  /></p>
 </form>
 </div>
 </div>

@@ -16,11 +16,15 @@ def homepage():
 
     return render_template("homepage.html")
 
+
+
 @app.route("/landing")
 def landing():
     """View landing."""
-
+    
     return render_template("landing.html")
+
+
 
 
 @app.route("/items")
@@ -78,30 +82,7 @@ def show_user(user_id):
 def show_cart():
     """Show items in cart."""
 
-    # order_total = 0
-    # cart_items = []
-
-    # cart = session.get("CartItem", cart_items=cart_items, order_total=order_total)
-    
-    # for item in cart:
-    #     order_total += item.price
-    
-    # return render_template("cart.html", cart=cart)
-
     return render_template("cart.html")
-
-# @app.route("/add_to_cart", methods=["POST"])
-# def add_to_cart(cart_id):
-#     """Add item to cart."""
-
-#     # item_id = request.form.get("item_id")
-#     # item = crud.get_item_by_id(item_id)
-#     # session["cart"] = item
-#     # cart_item = crud.get_cart_item_by_id(cart_id)
-
-
-#     return render_template("/item_details.html", cart_item=cart_item)
-
 
 
 @app.route("/empty_cart")
@@ -128,14 +109,18 @@ def process_login():
 
     return redirect("/")
 
-# @app.route("/logout")
-# def process_logout():
-#     """Process user logout."""
+@app.route("/logout", methods=["POST"])
+def process_logout():
+    """Process user logout."""
 
-#     del session["user_email"]
-#     flash("You're logged out!")
+    logged_in_to_email = session.get("user_email")
+    if logged_in_to_email is None:
+        flash("You were already logged out!")
+    else:
+        del session["user_email"]
+        flash("You're logged out!")
 
-#     return redirect("/")
+    return redirect("/")
 
 
 @app.route("/update_quantity", methods=["POST"])
@@ -148,9 +133,9 @@ def update_quantity():
     return "Quantity Updated"
 
 
-@app.route("/items/<item_id>/quantities", methods=["POST"])
-def create_quantity(item_id):
-    """Create a new quantity for the item."""
+@app.route("/items/<item_id>/carts", methods=["GET","POST"])
+def create_cart_item(item_id):
+    """Create a new cart item."""
 
     logged_in_email = session.get("user_email")
     quantity_amount = request.form.get("quantity")
@@ -163,13 +148,17 @@ def create_quantity(item_id):
         user = crud.get_user_by_email(logged_in_email)
         item = crud.get_item_by_id(item_id)
 
-        quantity = crud.create_quantity(user, item, int(quantity_amount))
-        db.session.add(quantity)
+        cart_item = crud.create_cart_item(user.user_id, item.item_id, int(quantity_amount))
+        get_item = crud.get_cart_items_by_user_id(user.user_id)
+        db.session.add(cart_item)
         db.session.commit()
 
         flash(f" {quantity_amount} of this item has been added to your cart.")
 
     return redirect(f"/items/{item_id}")
+    
+    
+
 
 
 if __name__ == "__main__":

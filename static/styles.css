@@ -165,7 +165,7 @@ ul {
 .allfields {
     display: flex;
     flex-direction: row;
-    margin-left: 39.5%;
+    margin-left: 39.15%;
     margin-top: -15%;
     z-index: 3;
     color: #399DFA;font-family: 'Roboto';
@@ -208,11 +208,31 @@ ul {
 }
 
 #sub1 {
-    margin-top: 8%;
+    margin-top: 16%;
+    margin-right: 18%;
 }
 
 #sub2 {
-    margin-top: 10%;
+    margin-top: 18%;
+}
+
+#sub3 {
+    margin-top: 540%;
+    margin-left: -1130%;
+    background: none;
+    border: none;
+    color: #399DFA;
+    font-family: 'Roboto';
+    font-weight: bolder;
+    transition: ease-out .25s;
+}
+
+
+
+#sub3:hover {
+    color: #0f77da;
+    transition: ease-in-out .25s;
+    transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 
  .field2 {
@@ -237,6 +257,8 @@ ul {
     flex-direction: column;
     padding-top: 30px;
     text-align: center;
+    height: 20px;
+    width: 173px;
 }
 
 .password {
@@ -244,6 +266,8 @@ ul {
     flex-direction: column;
     padding-top: 30px;
     text-align: center;
+    height: 20px;
+    width: 173px;
 }
 
 .head-img {

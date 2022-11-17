@@ -1,4 +1,5 @@
-from model import db, User, Quantity, Coupon, Item, CartItem, connect_to_db
+from model import db, User, Coupon, Item, CartItem, connect_to_db
+
 
 def create_user(email, password):
     
@@ -16,6 +17,7 @@ def get_user_by_id(user_id):
 def get_user_by_email(email):
 
     return User.query.filter(User.email == email).first()
+
 
 
  ##--##  ##--##  ##--##  ##--##
@@ -42,27 +44,15 @@ def get_item_by_id(item_id):
  ##--##  ##--##  ##--##  ##--##
 
 
-def create_quantity(user,item,amount):
-    quantity = Quantity(
-        user=user,
-        item=item,
-        amount=amount,
-        )
-    return quantity
-
-def update_quantity(quantity_id, new_amount):
-
-    quantity = Quantity.query.get(quantity_id)
-    quantity.amount = new_amount
 
 
  ##--##  ##--##  ##--##  ##--##
 
 
-def create_coupon(user,item):
+def create_coupon(user,coupon_code):
     coupon = Coupon(
         user=user,
-        item=item,
+        coupon_code=coupon_code,
         )
     return coupon
 
@@ -79,21 +69,18 @@ def get_coupon_by_id(coupon_id):
   ##--##  ##--##  ##--##  ##--##
   
   
-# def create_cart_item(user,item,quantity):
-#     cart_item = CartItem(
-#         user=user,
-#         item=item,
-#         quantity=quantity,
-#         )
-#     return cart_item
-    
-# def get_cart_items():
-#     return CartItem.query.all()
+def create_cart_item(user_id,item_id,quantity):
+    return CartItem(
+        user_id=user_id,
+        item_id=item_id,
+        quantity=quantity,
+        )
+  
+def get_cart_items_by_user_id(user_id):
+    return CartItem.query.filter(CartItem.user_id == user_id).all()
 
-# def get_cart_item_by_id(cart_item_id):
 
-#     return CartItem.query.get(cart_item_id)
-    
+
     
   
 if __name__ == '__main__':

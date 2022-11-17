@@ -45,28 +45,16 @@ class CartItem(db.Model):
     quantity = db.Column(db.Integer)
     item_id = db.Column(db.Integer,db.ForeignKey("items.item_id"))
     user_id = db.Column(db.Integer,db.ForeignKey("users.user_id"))
-    quantity_id = db.Column(db.Integer, db.ForeignKey("quantities.quantity_id"))
+
     
     user = db.relationship("User", backref="carts")
     item = db.relationship("Item", backref="carts")
-    quantity = db.relationship("Quantity", backref="carts")
+   
     
-    
-class Quantity(db.Model):
-    __tablename__ = "quantities"
-    
-    quantity_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    amount = db.Column(db.Integer)
-    item_id = db.Column(db.Integer,db.ForeignKey("items.item_id"))
-    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
-    
-    
-    item = db.relationship("Item", backref="quantity")
-    user = db.relationship("User", backref="quantity")
- 
-    
+        
+        
     def __repr__(self):
-        return f"<Quantity quantity_id={self.quantity_id} amount={self.amount}>"
+        return f"<CartItem cart_id={self.cart_id} item_id={self.item_id} user_id={self.user_id} quantity_id={self.quantity_id}>"
     
     
     
@@ -77,7 +65,6 @@ class Coupon(db.Model):
     coupon_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     coupon_code = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
-    
     
     user = db.relationship("User", backref="coupons")
     

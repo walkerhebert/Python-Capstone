@@ -1,11 +1,13 @@
 import os
 import json
 from random import choice, randint
-import string
 
+import string
+import random
 import crud
 import model
 import server
+from model import Coupon, connect_to_db, db
 
 os.system("dropdb waka")
 os.system('createdb waka')
@@ -51,7 +53,31 @@ for n in range(user_count):
         random_item = choice(items_in_db)
         amount = randint(1, 11)
 
-        quantity = crud.create_quantity(user, random_item, amount)
+        quantity = crud.create_cart_item(user.user_id, random_item.item_id, amount)
         model.db.session.add(quantity)
 
 model.db.session.commit()
+
+
+##--##  ##--##  ##--##  ##--##
+
+
+
+
+
+# coupon_code = string.ascii_letters + string.digits
+
+# def coupon_generator(code_length=20):
+#     return "".join([ random.choice(coupon_code) for _ in range(code_length) ])
+
+
+# new_coupon = crud.create_coupon(user, coupon_generator())
+# model.db.session.add(new_coupon)
+# model.db.session.commit()
+
+# print(coupon_generator())
+
+
+
+
+
