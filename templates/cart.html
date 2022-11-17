@@ -1,5 +1,21 @@
 {% extends 'base.html' %} {% block title %}Cart{% endblock %}
 {% block body %}
 
-  
+
+
+<div>
+    <ul class="cart_row">
+      {% for item in cart_item %}
+      <li>
+        <a href="/items/ {{ item.item_id }}/carts">
+            <img class="images" src="{{ item.image_path }}">
+            <div class="contents">
+            {{ item.item_name }} {{ item.price }}
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
   {% endblock %}
+  

@@ -149,15 +149,14 @@ def create_cart_item(item_id):
         item = crud.get_item_by_id(item_id)
 
         cart_item = crud.create_cart_item(user.user_id, item.item_id, int(quantity_amount))
-        get_item = crud.get_cart_items_by_user_id(user.user_id)
+        # get_item = crud.get_cart_items_by_user_id(user.user_id)
         db.session.add(cart_item)
         db.session.commit()
 
         flash(f" {quantity_amount} of this item has been added to your cart.")
 
     return redirect(f"/items/{item_id}")
-    
-    
+    # return render_template("cart.html", get_item=get_item )
 
 
 
