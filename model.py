@@ -54,7 +54,7 @@ class CartItem(db.Model):
         
         
     def __repr__(self):
-        return f"<CartItem cart_id={self.cart_id} item_id={self.item_id} user_id={self.user_id} quantity_id={self.quantity_id}>"
+        return f"<CartItem cart_id={self.cart_id} quantity={self.quantity} item_id={self.item_id} user_id={self.user_id} >"
     
     
     

@@ -70,11 +70,12 @@ def get_coupon_by_id(coupon_id):
   
   
 def create_cart_item(user_id,item_id,quantity):
-    return CartItem(
+    cart = CartItem(
         user_id=user_id,
         item_id=item_id,
         quantity=quantity,
-        )
+    )
+    return cart
   
 def get_cart_items_by_user_id(user_id):
     return CartItem.query.filter(CartItem.user_id == user_id).all()

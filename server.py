@@ -2,11 +2,10 @@ from flask import Flask, render_template, request, flash, session, redirect
 from model import connect_to_db, db
 import crud
 
-
 from jinja2 import StrictUndefined
 
 app = Flask(__name__)
-app.secret_key = "dev"
+app.secret_key = "walker-project-key"
 app.jinja_env.undefined = StrictUndefined
 
 
@@ -25,6 +24,7 @@ def landing():
     return render_template("landing.html")
 
 
+#####______######_______######_____#######
 
 
 @app.route("/items")
@@ -45,6 +45,8 @@ def show_item(item_id):
     return render_template("item_details.html", item=item )
 
 
+#####______######_______######_____#######
+
 
 @app.route("/users", methods=["POST"])
 def register_user():
@@ -63,34 +65,19 @@ def register_user():
         flash("Account created! Please log in.")
 
     return redirect("/")
-
-
     
 
 
-@app.route("/users/<user_id>")
-def show_user(user_id):
-    """Show details on a particular user."""
+# @app.route("/users/<user_id>")
+# def show_user(user_id):
+#     """Show details on a particular user."""
 
-    user = crud.get_user_by_id(user_id)
+#     user = crud.get_user_by_id(user_id)
 
-    return render_template("user_details.html", user=user)
+#     return render_template("user_details.html", user=user)
 
         
-        
-@app.route("/cart")
-def show_cart():
-    """Show items in cart."""
-
-    return render_template("cart.html")
-
-
-@app.route("/empty_cart")
-def empty_cart():
-    """Empty cart."""
-
-    # session["cart"] = {}
-    return redirect("/cart")
+#####______######_______######_____#######   
 
 
 @app.route("/login", methods=["GET","POST"])
@@ -100,6 +87,8 @@ def process_login():
     email = request.form.get("email")
     password = request.form.get("password")
 
+    
+    
     user = crud.get_user_by_email(email)
     if not user or user.password != password:
         flash("The email or password you entered was not valid.")
@@ -123,6 +112,9 @@ def process_logout():
     return redirect("/")
 
 
+#####______######_______######_____#######
+
+
 @app.route("/update_quantity", methods=["POST"])
 def update_quantity():
     quantity_id = request.json["quantity_id"]
@@ -131,6 +123,23 @@ def update_quantity():
     db.session.commit()
 
     return "Quantity Updated"
+
+
+#####______######_______######_____#######
+
+
+@app.route("/cart")
+def cart():
+    """Show items in cart."""
+    
+    
+    get_user = crud.get_user_by_email(session.get("user_email"))
+    
+    
+    cart_items = crud.get_cart_items_by_user_id(get_user.user_id)
+    
+    return render_template("cart.html", cart_items=cart_items)
+
 
 
 @app.route("/items/<item_id>/carts", methods=["GET","POST"])
@@ -149,14 +158,22 @@ def create_cart_item(item_id):
         item = crud.get_item_by_id(item_id)
 
         cart_item = crud.create_cart_item(user.user_id, item.item_id, int(quantity_amount))
-        # get_item = crud.get_cart_items_by_user_id(user.user_id)
         db.session.add(cart_item)
         db.session.commit()
 
         flash(f" {quantity_amount} of this item has been added to your cart.")
 
-    return redirect(f"/items/{item_id}")
-    # return render_template("cart.html", get_item=get_item )
+    return redirect(f"/items")
+    # return render_template("cart.html", cart_items=cart_items)
+    
+    
+
+@app.route("/carts/empty_cart")
+def empty_cart():
+    """Empty cart."""
+
+    return redirect("/cart")
+
 
 
 

@@ -5,12 +5,14 @@
 
 <div>
     <ul class="cart_row">
-      {% for item in cart_item %}
+      {% for cart_item in cart_items %}
       <li>
-        <a href="/items/ {{ item.item_id }}/carts">
-            <img class="images" src="{{ item.image_path }}">
-            <div class="contents">
-            {{ item.item_name }} {{ item.price }}
+        <a href="/items/{{ cart_item.item.item_id }}">
+          <img class="checkout_images" src="{{ cart_item.item.image_path }}">
+           
+            <div class="checkout-contents">
+            <div class="item-name"> {{ cart_item.item.item_name }}</div> <div>{{ cart_item.item.price }}</div> 
+            <div> Quantity: {{ cart_item.quantity }} </div>
           </div>
         </a>
       </li>
