@@ -1,7 +1,9 @@
 {% extends 'base.html' %} {% block title %}Cart{% endblock %}
 {% block body %}
 
-
+<div class="page-header">
+  <p>Shopping Cart</p>
+  </div>
 
 <div>
     <ul class="cart_row">
@@ -11,7 +13,7 @@
           <img class="checkout_images" src="{{ cart_item.item.image_path }}">
            
             <div class="checkout-contents">
-            <div class="item-name"> {{ cart_item.item.item_name }}</div> <div>{{ cart_item.item.price }}</div> 
+            <div class="item-name3"> {{ cart_item.item.item_name }}</div> <div>{{ cart_item.item.price }}</div> 
             <div> Quantity: {{ cart_item.quantity }} </div>
           </div>
         </a>

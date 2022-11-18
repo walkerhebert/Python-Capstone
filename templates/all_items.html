@@ -3,13 +3,16 @@
 
 {% block body %}
 <div>
+  <div class="page-header">
+  <p>Clothing Collection</p>
+  </div>
     <ul class="row">
       {% for item in items %}
       <li>
-        <a href="/items/ {{ item.item_id }}">
+        <a href="/items/{{ item.item_id }}">
             <img class="images" src="{{ item.image_path }}">
             <div class="contents">
-           <div class="item-name"> {{ item.item_name }} </div> {{ item.price }}
+           <div class="item-name2"> {{ item.item_name }} </div> {{ item.price }}
           </div>
         </a>
       </li>

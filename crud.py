@@ -80,7 +80,10 @@ def create_cart_item(user_id,item_id,quantity):
 def get_cart_items_by_user_id(user_id):
     return CartItem.query.filter(CartItem.user_id == user_id).all()
 
-
+def delete_cart_by_cart_id(cart_id):
+    cart_session = CartItem.query.get(cart_id)
+    
+    return cart_session
 
     
   

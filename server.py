@@ -135,7 +135,6 @@ def cart():
     
     get_user = crud.get_user_by_email(session.get("user_email"))
     
-    
     cart_items = crud.get_cart_items_by_user_id(get_user.user_id)
     
     return render_template("cart.html", cart_items=cart_items)
@@ -167,12 +166,26 @@ def create_cart_item(item_id):
     # return render_template("cart.html", cart_items=cart_items)
     
     
+    
+# @app.route("/empty_cart")
+# def empty_cart(cart_id):
+#     delete_carts = crud.delete_cart_by_cart_id(cart_id)
+#     db.session.delete(cart_id)
+#     db.session.commit()
+    
+#     return render_template("empty_cart.html", delete_carts=delete_carts)
+    
+    
 
-@app.route("/carts/empty_cart")
-def empty_cart():
-    """Empty cart."""
-
-    return redirect("/cart")
+# @app.route("/carts/empty_cart", methods=["POST"])
+# def empty_cart_method(cart_id):
+#     """Empty cart."""
+    
+#     delete_carts = crud.delete_cart_by_cart_id(cart_id)
+#     db.session.delete(cart_id)
+#     db.session.commit()
+    
+#     return redirect("/empty_cart", delete_carts=delete_carts)
 
 
 

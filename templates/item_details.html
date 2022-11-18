@@ -12,8 +12,8 @@
 </div>
 
 <div class="descrip">
-<p>
-  {{ item.description }}
+<div class="details-p"><p> Item description : <br></div>
+  <div class="item-descrip"> {{ item.description }} </div>
 </p>
 </div>
 
@@ -23,9 +23,9 @@
 <form action="/items/{{ item.item_id }}/carts" method="POST">
   <div class="quant-form">
   <p>
-    Quantity:
+    Qty* <br>
     <select name="quantity" class="amount-field">
-      <option value="">None</option>
+      <option value=""></option>
       {% for num in range(1,11) %}
       <option value="{{ num }}">{{ num }}</option>
       {% endfor %}
