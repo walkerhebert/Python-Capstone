@@ -11,15 +11,19 @@
       <li>
         <a href="/items/{{ cart_item.item.item_id }}">
           <img class="checkout_images" src="{{ cart_item.item.image_path }}">
-           
             <div class="checkout-contents">
-            <div class="item-name3"> {{ cart_item.item.item_name }}</div> <div>{{ cart_item.item.price }}</div> 
-            <div> Quantity: {{ cart_item.quantity }} </div>
+            <div class="item-name3"> Item <br><br> {{ cart_item.item.item_name }}</div> <div class="cart-price"> Price <br><br> {{ cart_item.item.price }}</div> 
+            <div class="cart-quant"> Quantity <br><br> {{ cart_item.quantity }} </div>
           </div>
         </a>
+        <form action="/carts/{{ cart_item.cart_id }}/delete" method="POST">
+          <input class="remove" type="submit" value="Remove"/>
+        </form>
       </li>
       {% endfor %}
     </ul>
+    
   </div>
+    
   {% endblock %}
   

@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request, flash, session, redirect
-from model import connect_to_db, db
+from flask import Flask, render_template, request, flash, session, redirect, jsonify
+from model import connect_to_db, db, Item
+from flask_login import current_user
 import crud
+import json
 
 from jinja2 import StrictUndefined
 
@@ -160,34 +162,39 @@ def create_cart_item(item_id):
         db.session.add(cart_item)
         db.session.commit()
 
-        flash(f" {quantity_amount} of this item has been added to your cart.")
+        flash(f" {item.item_name} have been added to your cart.")
 
     return redirect(f"/items")
     # return render_template("cart.html", cart_items=cart_items)
-    
-    
-    
-# @app.route("/empty_cart")
-# def empty_cart(cart_id):
-#     delete_carts = crud.delete_cart_by_cart_id(cart_id)
-#     db.session.delete(cart_id)
-#     db.session.commit()
-    
-#     return render_template("empty_cart.html", delete_carts=delete_carts)
+
     
     
 
-# @app.route("/carts/empty_cart", methods=["POST"])
-# def empty_cart_method(cart_id):
-#     """Empty cart."""
+@app.post("/carts/<item_id>/delete")
+def delete_cart(item_id):
+    """Empty cart."""
     
-#     delete_carts = crud.delete_cart_by_cart_id(cart_id)
-#     db.session.delete(cart_id)
-#     db.session.commit()
     
-#     return redirect("/empty_cart", delete_carts=delete_carts)
+    crud.delete_cart_item(item_id)
+    flash(f"Item has been removed.")
+    return redirect("/cart")
 
 
+
+# @app.route("/carts/subtotal")
+# def subtotal():
+#     """Show subtotal of items in cart."""
+    
+#     crud.cart_total(user_id)
+    
+    
+#     return redirect("/cart")
+
+@app.route("/coupons")
+def coupon():
+    """Show coupon."""
+    
+    return render_template("coupon.html")
 
 
 if __name__ == "__main__":

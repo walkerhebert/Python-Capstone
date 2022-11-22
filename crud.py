@@ -41,6 +41,10 @@ def get_item_by_id(item_id):
     return Item.query.get(item_id)
 
 
+
+def get_item_by_item_id(item_id):
+    item = Item.query.get(item_id())
+    return item
  ##--##  ##--##  ##--##  ##--##
 
 
@@ -80,10 +84,22 @@ def create_cart_item(user_id,item_id,quantity):
 def get_cart_items_by_user_id(user_id):
     return CartItem.query.filter(CartItem.user_id == user_id).all()
 
-def delete_cart_by_cart_id(cart_id):
+def get_cart_by_cart_id(cart_id):
     cart_session = CartItem.query.get(cart_id)
-    
     return cart_session
+
+def delete_cart_item(item_id):
+    cart_item = CartItem.query.get(item_id)
+    db.session.delete(cart_item)
+    db.session.commit()
+    
+    
+# def cart_total(cart_id):
+#     cart_items = CartItem.query.filter(CartItem.cart_id == cart_id).all()
+#     total = 0
+#     for item in cart_items:
+#         total += item.quantity * item.item.price
+#     return total
 
     
   

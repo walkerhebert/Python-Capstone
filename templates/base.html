@@ -17,15 +17,15 @@
     {% block head %}
     <div class="head-block"></div>
     <div class="logo"><a href="/landing">
-      <img src="../static/images/wo-logo.png" alt="logo" width="550px"></a>
+      <img src="../static/images/wo-logo.png" alt="logo" width="450px"></a>
       </div>
     <div class="nav">
       <ul>
         <li class="nav3"><a href="/landing">Home</a></li>
         <li class="nav1"><a href="/items">Collection</a></li>
         <li class="nav4"><a href="/login">Login</a></li>
+        <li class="coupons"><a href="/coupons">Coupons</a></li>
         <li class="nav2"><a href="/cart"><i style="font-size:34px" class="fa">&#xf07a;</i></a></li>
-        
       </ul>
     </div>{% endblock %}
     <main class="margin-top">
@@ -36,6 +36,26 @@
     </p>
   {% endfor %}
       {% block body %}{% endblock %}
-    </main>
+      <div class="copyright">
+        <p>© 2022 WalkerHebert | All Rights Reserved</p>
+    </div>
+      <div class="footer">
+        <div class="logos">
+          <ul>
+          <li>
+            <!-- <div class="linked">
+            <i class="fa fa-linkedin"></i>
+            </div>
+            <div class="insta">
+            <i class="fa fa-instagram"></i>
+            </div>
+            <div class="facebook">
+            <i class="fa fa-facebook"></i>
+            </div> -->
+          </li>
+        </ul>
+      </div>
+  </div>
+</main>
   </body>
 </html>

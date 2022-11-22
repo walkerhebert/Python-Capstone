@@ -60,6 +60,95 @@
         "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/68506054_004_b?$xlarge$&fit=constrain&qlt=80&wid=640",
         "description": "Black Dad fit jeans from BDG cut in a relaxed fit with a slightly tapered leg that's cropped to the ankle. This classic dad jean is available in multiple washes in 100% cotton BDG denim.",
         "price": "$79.99"
+    },
+
+    {
+        "item_name": "Pink Floyd Tee",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/61404398_001_b?$xlarge$&fit=constrain&qlt=80&wid=640",
+        "description": "Oversized Pink Floyd Tee. Subtle distress and a relaxed fit. Vintage piece only available at Waka Outfitters.",
+        "price": "$39.99"
+    },
+
+    {
+        "item_name": "Striped Crew-neck",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/69742468_029_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+        "description": "Pullover crew neck sweatshirt, only at Urban Outfitters. Topped with a retro stripe pattern and finished with contrast ribbed knit trims.",
+        "price": "$54.99"
+    },
+
+    {
+        "item_name": "Baggy Skate-fit Jeans",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/69972511_107_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+        "description": "Essential skate jean from BDG in a '90s-inspired silhouette. Available in multiple washes, these loose, relaxed fit jeans are made with 100% cotton BDG denim. Cut with a higher rise waist and wide leg openings, this throwback style features a classic 5-pocket styling and BDG denim logo patch at the back. Only at Waka Outfitters.",
+        "price": "$59.00"
+    },
+
+    {
+        "item_name": "WO Checker Scarf",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/70395975_018_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+        "description": "Get bundled up in this soft checkered scarf from Waka Outfitters with a cozy construction that's perfect for cold-weather layering. Topped with a logo patch and finished with tassel fringe trims.",
+        "price": "$35.00"
+    },
+
+    {
+        "item_name": "New Balance 57/40 Sneaker",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/67267492_029_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=1080",
+        "description": "The 57/40 approaches 574’s hybrid concept with new design developments and perspective on an iconic design – an overall sleeker silhouette provided by a slimmer last combines with a range of exaggerated features. The unique midsole combines a flared take on the classic 574 construction with ‘90s tech-inspired details, while the mudguard and eyerow feature the distinctive wavy embellishments of the ‘80s.",
+        "price": "$100.00"
+    },
+    {
+        "item_name": "The North Face Retro Nuptse Jacket",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/61858007_001_d?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=540",
+        "description": "The North Face brought back a cropped version of their classic '96 Nuptse jacket. Ultra warm in water-repellent nylon with 700 down fill in a boxy silhouette. Finished with an adjustable drawcord hem and zip-front closure. Packable hood; adjustable cuffs; zip pockets.",
+        "price": "$279.99"
+    },
+    {
+        "item_name": "WO Bastian Cozy Teddy Duffle Coat",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/78784857_024_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=540",
+        "description": "Ultra-cozy WO overcoat with a plush faux fur finish. Buttoned at the front and cut in a relaxed longline silhouette with a hood at the back and side pockets. Waka Outfitters exclusive.",
+        "price": "$179.99"
+    },
+    {
+        "item_name": "The Doors Oversized Sweatshirt",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/79719944_068_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=540",
+        "description": "The Doors graphic sweatshirt in an overdyed finish for a lived-in + vintage feel. Pullover construction cut in an oversized fit with a crew neckline and dropped shoulders. Available only at WO.",
+        "price": "$79.00"
+    },
+    {
+        "item_name": "BDG Odette Zip-Up Hooded Sweater",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/79912481_001_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=540",
+        "description": "Zip-up sweater from BDG in a chunky knit. Oversized fit with a standup collar, zip closure at the front and cinched cuffs. Finished with a hood at the back and side pockets. WO exclusive.",
+        "price": "$99.00"
+    },
+    {
+        "item_name": "Led Zeppelin Wembley T-Shirt",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/79566899_050_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=540",
+        "description": "T-shirt dress with a graphic from Led Zeppelin’s 1971 performance at Wembley Stadium. Cut in an oversized fit with a crew neckline and dropped shoulders. Overdyed finish for a lived-in + vintage feel. WO exclusive.",
+        "price": "$44.99"
+    },
+    {
+        "item_name": "Christina Aguilera Xtina T-Shirt",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/68720507_001_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=540",
+        "description": "T-shirt dress with a Christina Aguilera graphic at the front. Overdyed for a perfectly worn-in feel. Oversized fit so you can wear it as a tee or a tee dress. Finished with distressing throughout.",
+        "price": "$44.99"
+    },
+    {
+        "item_name": "The North Face Pile Pullover Jacket",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/68039973_011_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=540",
+        "description": "Piled fleece jacket by The North Face in a pullover style. Features a mock neckline and a partial zip at the front.",
+        "price": "$159.99"
+    },
+    {
+        "item_name": "The North Face Parka Jacket",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/68043025_031_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=540",
+        "description": "Down fill parka jacket by The North Face. Fitted with a zip front & full coverage hood. Includes pockets at the sides. Longline silhouette and topped with logo accents.",
+        "price": "$299.99"
+    },
+    {
+        "item_name": "A Tribe Called Sweatshirt",
+        "image_path": "https://images.urbndata.com/is/image/UrbanOutfitters/80232739_001_b?$xlarge$&fit=constrain&fmt=webp&qlt=80&wid=540",
+        "description": "Pullover sweatshirt with A Tribe Called Quest graphic printed at the front plus graphics at the sleeve. Cut in a relaxed + oversized fit with a crew neckline and dropped shoulders. Finished with an oversized graphic at the back. WO Exclusive.",
+        "price": "$79.00"
     }
     
 ]
