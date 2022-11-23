@@ -45,32 +45,11 @@ def get_item_by_id(item_id):
 def get_item_by_item_id(item_id):
     item = Item.query.get(item_id())
     return item
- ##--##  ##--##  ##--##  ##--##
-
-
-
-
- ##--##  ##--##  ##--##  ##--##
-
-
-def create_coupon(user,coupon_code):
-    coupon = Coupon(
-        user=user,
-        coupon_code=coupon_code,
-        )
-    return coupon
-
-def get_coupons():
-    return Coupon.query.all()
-
-
-def get_coupon_by_id(coupon_id):
-
-    return Coupon.query.get(coupon_id)
    
    
     
   ##--##  ##--##  ##--##  ##--##
+  
   
   
 def create_cart_item(user_id,item_id,quantity):

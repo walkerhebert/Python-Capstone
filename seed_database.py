@@ -2,8 +2,6 @@ import os
 import json
 from random import choice, randint
 
-import string
-import random
 import crud
 import model
 import server
@@ -58,24 +56,6 @@ for n in range(user_count):
 
 model.db.session.commit()
 
-
-##--##  ##--##  ##--##  ##--##
-
-
-
-
-
-# coupon_code = string.ascii_letters + string.digits
-
-# def coupon_generator(code_length=20):
-#     return "".join([ random.choice(coupon_code) for _ in range(code_length) ])
-
-
-# new_coupon = crud.create_coupon(user, coupon_generator())
-# model.db.session.add(new_coupon)
-# model.db.session.commit()
-
-# print(coupon_generator())
 
 
 

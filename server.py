@@ -67,16 +67,6 @@ def register_user():
         flash("Account created! Please log in.")
 
     return redirect("/")
-    
-
-
-# @app.route("/users/<user_id>")
-# def show_user(user_id):
-#     """Show details on a particular user."""
-
-#     user = crud.get_user_by_id(user_id)
-
-#     return render_template("user_details.html", user=user)
 
         
 #####______######_______######_____#######   
