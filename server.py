@@ -155,7 +155,6 @@ def create_cart_item(item_id):
         flash(f" {item.item_name} have been added to your cart.")
 
     return redirect(f"/items")
-    # return render_template("cart.html", cart_items=cart_items)
 
     
     
@@ -171,14 +170,15 @@ def delete_cart(item_id):
 
 
 
-# @app.route("/carts/subtotal")
-# def subtotal():
-#     """Show subtotal of items in cart."""
+@app.route("/carts/subtotal")
+def subtotal(item_id):
+    """Show subtotal of items in cart."""
+
+    total = crud.cart_total(item_id)
     
-#     crud.cart_total(user_id)
     
-    
-#     return redirect("/cart")
+    return render_template("cart.html", total=total)
+
 
 @app.route("/coupons")
 def coupon():
