@@ -72,13 +72,7 @@ def delete_cart_item(item_id):
     db.session.delete(cart_item)
     db.session.commit()
     
-    
-# def cart_total(item_id):
-#     cart_items = CartItem.query.filter(CartItem.item_id == item_id).all()
-#     total = 0
-#     for item in cart_items:
-#         total += item.quantity * item.item.price
-#     return total
+
 
     
   

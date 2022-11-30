@@ -26,7 +26,6 @@ def landing():
     return render_template("landing.html")
 
 
-#####______######_______######_____#######
 
 
 @app.route("/items")
@@ -47,7 +46,6 @@ def show_item(item_id):
     return render_template("item_details.html", item=item )
 
 
-#####______######_______######_____#######
 
 
 @app.route("/users", methods=["POST"])
@@ -68,8 +66,6 @@ def register_user():
 
     return redirect("/")
 
-        
-#####______######_______######_____#######   
 
 
 @app.route("/login", methods=["GET","POST"])
@@ -90,6 +86,8 @@ def process_login():
 
     return redirect("/")
 
+
+
 @app.route("/logout", methods=["POST"])
 def process_logout():
     """Process user logout."""
@@ -104,7 +102,6 @@ def process_logout():
     return redirect("/")
 
 
-#####______######_______######_____#######
 
 
 @app.route("/update_quantity", methods=["POST"])
@@ -116,8 +113,6 @@ def update_quantity():
 
     return "Quantity Updated"
 
-
-#####______######_______######_____#######
 
 
 @app.route("/cart")
